@@ -42,7 +42,7 @@ module.exports = function(grunt) {
 		},
 		watch: {
 			scripts: {
-				files: ['src/templates/**/*.*'],
+				files: ['src/templates/**/**'],
 				tasks: ['assemble'],
 				options: {
 					spawn: false,
