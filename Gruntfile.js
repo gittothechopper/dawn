@@ -8,13 +8,7 @@ module.exports = function(grunt) {
 
 		assemble: {
 			options: {
-				prettify: {
-					indent: 4
-				},
-				marked: {
-					sanitize: false
-				},
-				production: true,
+				development: true,
 				data: './src/**/*.{json,yml}',
 				assets: '<%= site.destination %>/assets',
 				helpers: './src/helpers/helper-*.js',
@@ -66,14 +60,13 @@ module.exports = function(grunt) {
 			},
 		},
 
-
 		// watch
 		watch: {
 			scripts: {
 				files: ['src/templates/**/**'],
-				tasks: ['assemble', 'validation'],
+				tasks: ['assemble','validation'],
 				options: {
-					spawn: false,
+					spawn: true,
 					livereload: true
 				},
 			},
@@ -85,11 +78,13 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-html-validation');
+
+
+
 	grunt.loadNpmTasks('grunt-prettify');	
 
 	// Default task to be run.
 	grunt.registerTask('default', ['clean', 'assemble']);
 	grunt.registerTask('validate', ['validation:all']);
-	grunt.registerTask('pretty', ['prettify:html']);
 
 };
