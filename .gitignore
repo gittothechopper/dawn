@@ -1,2 +1,4 @@
 node_modules/
 app/
+validation-report.json
+validation-status.json

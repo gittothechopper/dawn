@@ -74,6 +74,7 @@ module.exports = function(grunt) {
 				tasks: ['assemble', 'validation'],
 				options: {
 					spawn: false,
+					livereload: true
 				},
 			},
 		},
