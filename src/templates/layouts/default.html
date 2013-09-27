@@ -3,18 +3,14 @@
 <head>
 	<meta charset="UTF-8">
 	<title>{{ title }}</title>
-
-	{{#if devlopment}}
-		<script src="http://localhost:35729/livereload.js"></script>
-	{{/if}}
-
+	{{#unless production}}
+		{{> livereload}}
+	{{/unless}}
 </head>
 <body>
 	{{> nav }}
 	<div class="container">
-
 		{{> body }} 
-	
 	</div>
 </body>
 </html>

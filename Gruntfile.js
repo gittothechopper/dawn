@@ -8,7 +8,7 @@ module.exports = function(grunt) {
 
 		assemble: {
 			options: {
-				development: true,
+				production: false,
 				data: './src/**/*.{json,yml}',
 				assets: '<%= site.destination %>/assets',
 				helpers: './src/helpers/helper-*.js',
@@ -64,9 +64,9 @@ module.exports = function(grunt) {
 		watch: {
 			scripts: {
 				files: ['src/templates/**/**'],
-				tasks: ['assemble','validation'],
+				tasks: ['assemble'],
 				options: {
-					spawn: true,
+					spawn: false,
 					livereload: true
 				},
 			},
@@ -78,9 +78,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-html-validation');
-
-
-
+	// not in use
 	grunt.loadNpmTasks('grunt-prettify');	
 
 	// Default task to be run.
