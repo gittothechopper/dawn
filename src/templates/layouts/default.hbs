@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- <html manifest="manifest.appcache" lang="en"> -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<title>{{title}}</title>
+	<link rel="stylesheet" href="{{assets}}/css/screen.css">
+	<link rel="stylesheet" href="{{assets}}/css/{{title}}.css">
+</head>
+<body>
+	{{>nav}}
+	<div class="container flexslider">
+		<ul class="slides {{title}}">
+			{{>body}}
+		</ul>
+	</div>
+	<img src="{{assets}}/img/global/logo.png" alt="" class="logo">
+	<script src="{{assets}}/js/lib.js"></script>
+	<script src="{{assets}}/js/scripts/app.js"></script>
+	<script src="{{assets}}/js/scripts/{{title}}.js"></script>
+	{{#unless production}}
+		<script src="http://localhost:35729/livereload.js"></script>
+	{{/unless}}
+</body>
+</html>
