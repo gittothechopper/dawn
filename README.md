@@ -1,7 +1,8 @@
 # README
 
 ## New projects
-Clone to repo into your directory for new project: `git clone git@github.com:crsrusl/dawn.git`
+Clone to repo: `git clone git@github.com:crsrusl/dawn.git`
+
 Install associated dependencies: `npm install`
 
 ## Creating pages and associated assets
