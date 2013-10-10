@@ -11,4 +11,4 @@ To create a new page and its associated assets, execute the following command: `
 ## eDetail app.js
 Dawn uses [Flexslider](http://www.woothemes.com/flexslider/) for its slider capabilities. All of flexsliders properties are made available through the global `eDetail` object. 
 
-`eDetail` can be called by calling `eDetail` from your javascript code or console. You can also extend the Flexslider plug-in capabilities by adding to [Flexsliders callback API](http://www.woothemes.com/flexslider/). Your new capabilities will then be available through `eDetail`.
+You can extend the `eDetail` object by adding to [Flexsliders callback API](http://www.woothemes.com/flexslider/). Your new capabilities will then be available through the `eDetail` object.
