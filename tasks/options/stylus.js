@@ -4,7 +4,7 @@ module.exports = {
 			compress: true
 		},
 		files: {
-			'app/assets/css/screen.css': 'src/assets/styl/screen.styl',
+			'app/assets/css/screen.css': 'src/assets/styl/screen.styl'
 		},
 	},
 }
