@@ -27,7 +27,7 @@ To create an offline version of your application, execute the following command:
 
 `grunt offline`
 
-Dawn will create a chache manifest and attach the manifest link to your HTML pages.
+Dawn will create a cache manifest and attach the manifest link to your HTML pages.
 
 ---
 
