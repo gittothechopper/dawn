@@ -25,7 +25,7 @@ module.exports = function(grunt) {
 
 
 	// build project
-	grunt.registerTask('default', ['assemble', 'stylus', 'concat:files', 'copy:img', 'copy:js']);
+	grunt.registerTask('default', ['assemble', 'stylus', 'concat:files', 'copy:img', 'copy:js', 'prettify:all']);
 	grunt.registerTask('build', ['default']);
 
 	// validate build
@@ -34,7 +34,7 @@ module.exports = function(grunt) {
 	// create app cached version
 	grunt.registerTask('offline', ['default'], function () {
 		grunt.config.set('offlineState', true);
-		grunt.task.run('default');
+		grunt.task.run('default', 'manifest');
 	});
 
 	grunt.loadNpmTasks('assemble');
