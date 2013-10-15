@@ -1,6 +1,8 @@
 module.exports = {			
-	js: {
-		src: 'app/assets/js/scripts/**',
-		dest: 'app/assets/js/app.min.js',
+	files: {
+		expand: true,
+		cwd: 'app/assets/js/scripts/',
+		src: '**/*.js',
+		dest: 'app/assets/js/scripts/'
 	}
 }
