@@ -2,7 +2,7 @@
 ###A frontend development framework for creating eDetails. 
 
 
-Featuring handlebars templating, automatic offline app generation, css preprocessor support, html/css/js tidying, automatic scaffolding of javascript/css/html via commandline, image, css and html compression and more.
+Featuring handlebars templating, automatic offline app generation, css preprocessor support, html/css/js tidying, automatic scaffolding of javascript/css/html via commandline, image, css, html and javascript compression and more.
 
 ----
 
@@ -50,7 +50,7 @@ To build your project, execute the following command:
 
 `grunt build`
 
-Dawn will build your project out to the 'app' folder and remove any development specific code. This process also includes image, css and html compression.
+Dawn will build your project out to the 'app' folder and remove any development specific code. This process also includes image, css, html and javascript compression.
 
 ----
 
