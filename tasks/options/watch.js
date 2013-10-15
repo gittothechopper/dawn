@@ -1,10 +1,22 @@
 module.exports = {
-	scripts: {
-		files: ['src/templates/**/**', 'src/styl/**', 'src/assets/**'],
-		tasks: ['assemble', 'stylus','concat:files', 'copy:img', 'copy:js'],
-		options: {
-			nospawn : true,
-			livereload: true
-		},
+	options: {
+		nospawn : true,
+		livereload: true
+	},
+	assemble: {
+		files: ['src/templates/**/**'],
+		tasks: ['assemble'],
+	},
+	css: {
+		files: ['src/assets/styl/**/**'],
+		tasks: ['stylus'],
+	},
+	js: {
+		files: ['src/assets/js/**/**'],
+		tasks: ['concat:files', 'copy:js'],
+	},
+	img: {
+		files: ['src/assets/img/**/**'],
+		tasks: ['copy:img'],
 	},
 }
