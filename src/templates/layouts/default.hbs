@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {{#if offline}}<html manifest="manifest.appcache" lang="en">{{/if}}
-{{#unless offline}}<html lang="en">{{/unless}}
+{{#unless offline}}<html lang="en">{{/unless}} 
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -18,6 +18,6 @@
 	<script src="{{assets}}/js/lib.js"></script>
 	<script src="{{assets}}/js/scripts/app.js"></script>
 	<script src="{{assets}}/js/scripts/{{title}}.js"></script>
-	{{#unless production}}<script src="http://localhost:35729/livereload.js"></script>{{/unless}}
+	{{#if production}}<script src="http://localhost:35729/livereload.js"></script>{{/if}}
 </body>
 </html>

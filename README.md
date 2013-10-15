@@ -25,7 +25,7 @@ To create a new page and its associated assets, execute the following command:
 ### Build on the fly with Livereload.
 To build projects on the fly along with livereload, execute the following command:
 
-`grunt watch`
+`grunt server`
 
 ---
 
@@ -42,6 +42,15 @@ To create an offline version of your application, execute the following command:
 `grunt offline`
 
 Dawn will create a cache manifest and attach the manifest link to your HTML pages.
+
+----
+
+### Building your project.
+To build your project, execute the following command:
+
+`grunt build`
+
+Dawn will build your project out to the 'app' folder and remove any development specific code.
 
 ----
 

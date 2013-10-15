@@ -1,6 +1,7 @@
 module.exports = {
 	options: {
 		offline: '<%= offlineState %>',
+		production: '<%= production %>',
 		data: './src/**/*.{json,yml}',
 		assets: 'app/assets',
 		helpers: './src/helpers/helper-*.js',
