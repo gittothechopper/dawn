@@ -32,7 +32,7 @@ To build projects on the fly along with livereload, execute the following comman
 ### Validate your source.
 To validate your source files, execute the following command (note: this will trigger a build)
 
-`grunt validatez`
+`grunt validate`
 
 ---
 
