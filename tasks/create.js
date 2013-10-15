@@ -28,13 +28,11 @@ module.exports = function (grunt) {
 		var screenStyl = grunt.file.read(cssDirectory+'screen.styl');
 		grunt.file.write(cssDirectory+'screen.styl', screenStyl+'\n@import "'+name+'.styl"')
 
-
 		// create js module
 		grunt.file.write(javascriptDirectory+name+'.js', modulePattern)
 
 		// create page template
 		grunt.file.write(pagesDirectory+name+'.hbs', templateContent);
-
 
 	});
 };
