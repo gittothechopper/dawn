@@ -18,16 +18,6 @@ module.exports = function (grunt) {
 			modulePattern = 'var '+name+' = (function () {\n\tfunction init () {\n\t}\n\treturn {\n\t\tinit: init\n\t}\n}());\n\n$(function () {\n\t'+name+'.init();\n});',
 			templateContent = '---\ntitle: '+name+'\n---';
 
-
-			(function () {
-				function init () {
-
-				}
-				return {
-					init: init
-				}
-			}());
-
 		shell.exec('mkdir '+imagesDirectory+name);
 		shell.exec('touch '+javascriptDirectory+name+'.js');
 
