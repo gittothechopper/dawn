@@ -4,6 +4,7 @@ module.exports = {
 		production: '<%= production %>',
 		data: './src/**/*.{json,yml}',
 		assets: 'app/assets',
+		images: 'assets/img',
 		helpers: './src/helpers/helper-*.js',
 		layoutdir: './src/templates/layouts',
 		partials: ['./src/templates/includes/**/*.hbs'],
