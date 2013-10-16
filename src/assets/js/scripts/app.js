@@ -1,4 +1,4 @@
-var app = (function () {
+var app = (function () { 
 
 	function _slider (slider) {
 		if (typeof window.eDetail == 'function') {

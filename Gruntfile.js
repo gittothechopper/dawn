@@ -14,7 +14,7 @@ function loadConfig (path) {
 	return object;
 }
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
 	var config = {
 			pkg: grunt.file.readJSON('package.json'),
