@@ -54,6 +54,15 @@ Dawn will build your project out to the 'app' folder and remove any development 
 
 ----
 
+### Developer tools.
+Dawn has developer tools built in. The developer tools are only available when in `grunt server` state. 
+
+#### Tools available.
+
+_Cursor pixel coordinates:_ Hold shift and click to console log out css coorindates relative to your cursor position. Very useful for targeting reference and overlay hit points. 
+
+----
+
 ### The app.js
 Dawn uses [Flexslider](http://www.woothemes.com/flexslider/) for its slider capabilities. All of flexsliders properties are made available through the global `eDetail` object. 
 
