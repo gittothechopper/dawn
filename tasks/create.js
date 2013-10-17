@@ -1,44 +1,38 @@
 module.exports = function (grunt) {
 
-	/*
-		Create template pages and their associated assets
-		Run from the command line as follows: grunt create --name=$var
-	*/
+    /*
+        Create template pages and their associated assets
+        Run from the command line as follows: grunt create --name=$var
+    */
 
-	var shell = require('shelljs'),
-		name = grunt.option('name') || null;
+    var name = grunt.option('name') || null;
 
-	grunt.registerTask('create', function() {
+    grunt.registerTask('create', function() {
 
-		var assetsDirectory = 'src/assets/',
-			pagesDirectory = 'src/templates/pages/',
-			cssDirectory = 'src/assets/styl/',
-			imagesDirectory = 'src/assets/img/',
-			javascriptDirectory = 'src/assets/js/scripts/',
-			modulePattern = 'var '+name+' = (function () {\n\tfunction init () {\n\t}\n\treturn {\n\t\tinit: init\n\t}\n}());\n\n$(function () {\n\t'+name+'.init();\n});',
-			templateContent = '---\ntitle: '+name+'\n---';
+        var assetsDirectory = 'app/assets/',
+            pagesDirectory = 'app/templates/pages/',
+            cssDirectory = 'app/assets/styles/',
+            imagesDirectory = 'app/assets/img/',
+            javascriptDirectory = 'app/assets/scripts/',
+            modulePattern = 'var '+name+' = (function () {\n\tfunction init () {\n\t}\n\treturn {\n\t\tinit: init\n\t}\n}());\n\n$(function () {\n\t'+name+'.init();\n});',
+            templateContent = '---\ntitle: '+name+'\ncssname: ' + name + '\njsname: ' + name + '\n---';
 
-		// Cursory check that the file doesn't exist
-		if(grunt.file.exists(pagesDirectory+name+'.hbs')) {
-			grunt.fail.warn('Sorry, that page already exists' ,1);
-		}
+        // Cursory check that the file doesn't exist
+        if(grunt.file.exists(pagesDirectory+name+'.hbs')) {
+            grunt.fail.warn('Sorry, that page already exists' ,1);
+        }
 
+        // Make img directory
+        grunt.file.mkdir(imagesDirectory+name);
 
-		shell.exec('mkdir '+imagesDirectory+name);
-		shell.exec('touch '+javascriptDirectory+name+'.js');
+        // create css
+        grunt.file.write(cssDirectory+name+'.scss', '#'+name+' {\n\n}');
 
-		// create css
-		grunt.file.write(cssDirectory+name+'.styl', '.'+name+'\n\t/* '+name+' */')
+        // create js module
+        grunt.file.write(javascriptDirectory+name+'.js', modulePattern)
 
-		// import styles into main stylsheet
-		var screenStyl = grunt.file.read(cssDirectory+'screen.styl');
-		grunt.file.write(cssDirectory+'screen.styl', screenStyl+'\n@import "'+name+'.styl"')
+        // create page template
+        grunt.file.write(pagesDirectory+name+'.hbs', templateContent);
 
-		// create js module
-		grunt.file.write(javascriptDirectory+name+'.js', modulePattern)
-
-		// create page template
-		grunt.file.write(pagesDirectory+name+'.hbs', templateContent);
-
-	});
+    });
 };
