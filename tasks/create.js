@@ -18,7 +18,7 @@ module.exports = function (grunt) {
             templateContent = '---\ntitle: '+name+'\ncssname: ' + name + '\njsname: ' + name + '\n---';
 
         // Cursory check that the file doesn't exist
-        if(grunt.file.exists(pagesDirectory+name+'.hbs')) {
+        if (grunt.file.exists(pagesDirectory+name+'.hbs')) {
             grunt.fail.warn('Sorry, that page already exists' ,1);
         }
 
@@ -26,10 +26,10 @@ module.exports = function (grunt) {
         grunt.file.mkdir(imagesDirectory+name);
 
         // create css
-        grunt.file.write(cssDirectory+name+'.scss', '#'+name+' {\n\n}');
+        grunt.file.write(cssDirectory+name+'.styl', '#'+name+' {\n\n}');
 
         // create js module
-        grunt.file.write(javascriptDirectory+name+'.js', modulePattern)
+        grunt.file.write(javascriptDirectory+name+'.js', modulePattern);
 
         // create page template
         grunt.file.write(pagesDirectory+name+'.hbs', templateContent);
