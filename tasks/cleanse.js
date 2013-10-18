@@ -1,38 +1,28 @@
 module.exports = function (grunt) {
 
-	/* 
-		Create template pages and their associated assets 
-		Run from the command line as follows: grunt create --name=$var
-	*/
-	
-	var shell = require('shelljs'),
-		name = grunt.option('name') || null;
+	var assets = new Array();
 
-	grunt.registerTask('create', function() {
-		
-		var assetsDirectory = 'src/assets/',
-			pagesDirectory = 'src/templates/pages/',
-			cssDirectory = 'src/assets/styl/',
-			imagesDirectory = 'src/assets/img/',
-			javascriptDirectory = 'src/assets/js/scripts/',
-			modulePattern = 'var '+name+' = (function () {\n\tfunction init () {\n\t}\n\treturn {\n\t\tinit: init\n\t}\n}());\n\n$(function () {\n\t'+name+'.init();\n});',
-			templateContent = '---\ntitle: '+name+'\n---';
-
-		shell.exec('mkdir '+imagesDirectory+name);
-		shell.exec('touch '+javascriptDirectory+name+'.js');
-
-		// create css
-		grunt.file.write(cssDirectory+name+'.styl', '.'+name+'\n\t/* '+name+' */')
-		
-		// import styles into main stylsheet
-		var screenStyl = grunt.file.read(cssDirectory+'screen.styl');
-		grunt.file.write(cssDirectory+'screen.styl', screenStyl+'\n@import "'+name+'.styl"')
-
-		// create js module
-		grunt.file.write(javascriptDirectory+name+'.js', modulePattern)
-
-		// create page template
-		grunt.file.write(pagesDirectory+name+'.hbs', templateContent);
-
+	// get list of assets
+	grunt.registerTask('cleanse', function () {
+		grunt.file.expand({
+			filter: 'isFile',
+			cwd: 'app'
+		}, ['**/*']).forEach(function (file) {	
+			assets.push(file);
+		});
+		output(assets);
 	});
-};
+
+	// find links to assets in content
+	function output (assets) {
+		grunt.file.expand({
+			filter: 'isFile',
+			cwd: 'app'
+		}, ['**/*.html', '**/*.js', '**/*.css']).forEach(function (file) {	
+			var content = grunt.file.read('app/'+file);
+
+
+		});
+	}
+
+}
