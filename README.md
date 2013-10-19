@@ -65,7 +65,9 @@ _Cursor pixel coordinates:_ Hold shift and click to console log out css coorinda
 
 ### Removing unused assets
 
+
 Dawn will automatically remove assets not in use on your project. It searches HTML, CSS and Javascript for asset links, if it finds an asset which is not called upon, it will remove it.
+
 ----
 
 ### The app.js
