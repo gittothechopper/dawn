@@ -1,9 +1,9 @@
 module.exports = function (grunt) {
 
-	var assets = new Array(),
-		regex = new RegExp('(?:href|src|url)[\=\(][\'"](?!(?:http|#|\s|"))(.+?(?=jpg|png|mp4|pdf|js)?)[\'"]', 'ig'),
-		links = new Array(),
-		_ = require('underscore');
+	var _ = require('underscore'),
+		assets = [],
+		links = [],
+		regex = new RegExp('(?:href|src|url)[\=\(][\'"](?!(?:http|#|\s|"))(.+?(?=jpg|png|mp4|pdf|js)?)[\'"]', 'ig');
 
 	grunt.registerTask('cleanse', function () {
 		getAssetsArray();
