@@ -19,7 +19,7 @@ module.exports = function (grunt) {
 
         // Cursory check that the file doesn't exist
         if (grunt.file.exists(pagesDirectory+name+'.hbs')) {
-            grunt.fail.warn('Sorry, that page already exists' ,1);
+            grunt.fail.warn('Sorry, that page already exists', 1);
         }
 
         // Make img directory
