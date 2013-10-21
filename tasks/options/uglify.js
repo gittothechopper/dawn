@@ -1,8 +1,8 @@
 module.exports = {			
 	files: {
 		expand: true,
-		cwd: 'app/assets/js/scripts/',
+		cwd: 'app/assets/js/app/js/lib.js',
 		src: '**/*.js',
-		dest: 'app/assets/js/scripts/'
+		dest: 'app/assets/js/app/js/lib.js'
 	}
 }

@@ -13,7 +13,7 @@ module.exports = {
 	},
 	js: {
 		files: ['src/assets/js/**/**'],
-		tasks: ['concat:files', 'copy:js'],
+		tasks: ['concat:files', 'uglify'],
 	},
 	img: {
 		files: ['src/assets/img/**/**'],

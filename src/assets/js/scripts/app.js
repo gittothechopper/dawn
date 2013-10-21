@@ -15,13 +15,13 @@ var app = (function () {
 			directionNav: false,
 			animationLoop: false,
 			start: function (slider) {
-				slider(slider);
+				_slider(slider);
 			},
 			after: function (slider) {
-				slider(slider);
+				_slider(slider);
 			},
 			end: function (slider) {
-				slider(slider);
+				_slider(slider);
 			}
 		});
 	};
