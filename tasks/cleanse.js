@@ -1,38 +1,46 @@
 module.exports = function (grunt) {
 
-	/* 
-		Create template pages and their associated assets 
-		Run from the command line as follows: grunt create --name=$var
-	*/
-	
-	var shell = require('shelljs'),
-		name = grunt.option('name') || null;
+	var _ = require('underscore'),
+		assets = [],
+		links = [],
+		regex = new RegExp('(?:href|src|url)[\=\(][\'"](?!(?:http|#|\s|"))(.+?(?=jpg|png|mp4|pdf|js)?)[\'"]', 'ig');
 
-	grunt.registerTask('create', function() {
-		
-		var assetsDirectory = 'src/assets/',
-			pagesDirectory = 'src/templates/pages/',
-			cssDirectory = 'src/assets/styl/',
-			imagesDirectory = 'src/assets/img/',
-			javascriptDirectory = 'src/assets/js/scripts/',
-			modulePattern = 'var '+name+' = (function () {\n\tfunction init () {\n\t}\n\treturn {\n\t\tinit: init\n\t}\n}());\n\n$(function () {\n\t'+name+'.init();\n});',
-			templateContent = '---\ntitle: '+name+'\n---';
-
-		shell.exec('mkdir '+imagesDirectory+name);
-		shell.exec('touch '+javascriptDirectory+name+'.js');
-
-		// create css
-		grunt.file.write(cssDirectory+name+'.styl', '.'+name+'\n\t/* '+name+' */')
-		
-		// import styles into main stylsheet
-		var screenStyl = grunt.file.read(cssDirectory+'screen.styl');
-		grunt.file.write(cssDirectory+'screen.styl', screenStyl+'\n@import "'+name+'.styl"')
-
-		// create js module
-		grunt.file.write(javascriptDirectory+name+'.js', modulePattern)
-
-		// create page template
-		grunt.file.write(pagesDirectory+name+'.hbs', templateContent);
-
+	grunt.registerTask('cleanse', function () {
+		getAssetsArray();
 	});
-};
+
+	// get list of all assets
+	function getAssetsArray () {
+		grunt.file.expand({
+			filter: 'isFile',
+			cwd: 'app'
+		}, ['assets/**/*']).forEach(function (file) {	
+			assets.push(file);
+		});
+		getLinkedAssets(assets);
+	}
+
+	// find links to assets in content
+	function getLinkedAssets (assets) {
+		grunt.file.expand({
+			filter: 'isFile',
+			cwd: 'app'
+		}, ['**/*.html', '**/*.js', '**/*.css']).forEach(function (file) {	
+			var content = grunt.file.read('app/'+file);
+			while ((result = regex.exec(content)) !== null) {
+				links.push(result[1]);
+			}
+		});
+		removeAssets(assets, links);
+	}
+
+	// remove unused assets
+	function removeAssets () {
+		var remove = _.difference(assets, links);
+		remove.forEach(function (el) {
+			console.log('Removed: '+el);
+			grunt.file.delete('app/'+el);
+		});
+	}
+
+}

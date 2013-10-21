@@ -4,3 +4,4 @@ app/
 npm-debug.log
 validation-report.json
 validation-status.json
+.DS_Store

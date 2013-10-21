@@ -2,7 +2,7 @@
 ###A frontend development framework for creating eDetails. 
 
 
-Featuring handlebars templating, automatic offline app generation, css preprocessor support, html/css/js tidying, automatic scaffolding of javascript/css/html via commandline, image, css, html and javascript compression and more.
+Featuring handlebars templating, automatic offline app generation, css preprocessor support, html/css/js tidying, automatic scaffolding of javascript/css/html via commandline, image, css, html and javascript compression and removal of unused assets.
 
 ----
 
@@ -60,6 +60,13 @@ Dawn has developer tools built in. The developer tools are only available when i
 #### Tools available.
 
 _Cursor pixel coordinates:_ Hold shift and click to console log out css coorindates relative to your cursor position. Very useful for targeting reference and overlay hit points. 
+
+----
+
+### Removing unused assets
+
+
+Dawn will automatically remove assets not in use on your project. It searches HTML, CSS and Javascript for asset links, if it finds an asset which is not called upon, it will remove it.
 
 ----
 
