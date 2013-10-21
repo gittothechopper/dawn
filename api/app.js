@@ -21,13 +21,26 @@ app.get('/ref', function (req, res) {
 
 	var fs = require('fs-extra')
 
-	var file = './file.txt'
+	var file = './src/assets/styl/screen.styl'
+
+	content = '\n.ref1 {\n\tleft: 100px;\n\ttop: 100px;\n}'
 
 	fs.createFile(file, function (err) {
-	  console.log(err);
+		if (err) {
+			console.log(err);
+		}
+		else {
+			fs.appendFile(file, content, function (err) { 
+				if (err) {
+					console.log(err);
+				}
+				else {
+					res.send(200);
+				}
+			});
+		}
 	});
 
-	res.send(200);
 });
 
 
