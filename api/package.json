@@ -9,5 +9,8 @@
     "express": "3.2.6",
     "fs-extra": "~0.8.0",
     "express-chrome-logger": "~0.1.3"
+  },
+  "dependencies": {
+    "cors": "~2.1.0"
   }
 }

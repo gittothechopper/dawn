@@ -8,22 +8,17 @@
 		var hitArea = 40,
 			left = e.pageX-(hitArea/2),
 			top = e.pageY-(hitArea/2);
-
-			console.log('click')
 		
 		// Hold shift and click to console log CSS position of hit area
 		if (e.shiftKey) {
 
-
 			$.ajax({
 				url: 'http://127.0.0.1:3001/ref',
-				type: 'POST',
-				dataType: 'jsonp',
-				contentType: 'application/json',
-				data: "x="+left,
-			}).done(function () {
-				console.log('Reference added.');
-			})
+				type: 'post',
+				dataType: 'json',
+				contentType: 'json',
+				data: 'name='+JSON.stringify({number:1})
+			});
 		}
 	}, false);
 </script>
