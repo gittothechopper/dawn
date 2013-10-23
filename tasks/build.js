@@ -1,3 +1,3 @@
 module.exports = function (grunt) {
-	grunt.registerTask('build', ['default', 'cssmin', 'htmlmin', 'cleanse', 'imagemin']);
+	grunt.registerTask('build', ['assemble', 'stylus', 'copy', 'concat', 'uglify', 'cssmin', 'htmlmin', 'cleanse', 'imagemin']);
 }

@@ -8,12 +8,16 @@ module.exports = {
 		tasks: ['assemble'],
 	},
 	css: {
-		files: ['src/assets/styl/**/**'],
+		files: ['src/assets/css/**/**'],
 		tasks: ['stylus'],
 	},
-	js: {
-		files: ['src/assets/js/**/**'],
-		tasks: ['concat:files', 'uglify'],
+	jsVendor: {
+		files: ['src/assets/js/vendor/**/**'],
+		tasks: ['copy:jsVendor', 'concat', 'uglify:jsVendor'],
+	},
+	jsScripts: {
+		files: ['src/assets/js/scripts/**/**'],
+		tasks: ['copy:jsScripts'],
 	},
 	img: {
 		files: ['src/assets/img/**/**'],

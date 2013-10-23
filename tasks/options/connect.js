@@ -5,7 +5,8 @@ module.exports = {
 			base: 'app/',
 			directory: 'app/',
 			hostname: 'localhost',
-			open: true
+			open: true,
+			livereload: true
 		}
 	}
 }

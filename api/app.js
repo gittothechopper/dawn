@@ -9,9 +9,9 @@ var corsOptions = {
 	origin: true
 };
 
+app.use(cors(corsOptions));
 app.use(express.bodyParser());
 app.use(require("express-chrome-logger"));
-app.use(cors(corsOptions));
 app.use(app.router);
 
 app.get('/', function (req, res) {

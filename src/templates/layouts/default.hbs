@@ -15,9 +15,8 @@
 			{{>body}}
 		</ul>
 	</div>
-	<script src="{{assets}}/js/lib.js"></script>
+	<script src="{{assets}}/js/lib.min.js"></script>
 	<script src="{{assets}}/js/scripts/{{title}}.js"></script>
-	{{#if production}}<script src="http://localhost:35729/livereload.js"></script>{{/if}}
 	{{#if production}}{{>dev}}{{/if}} 
 </body>
 </html>
