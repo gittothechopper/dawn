@@ -1,7 +1,10 @@
-exports.index = function (req, res) {
-	res.render('index', { title: 'Express' });
-};
-
 exports.ref = function (req, res) {
-	console.log('API REF');
+
+	var data = req.body,
+		left = data.position.x,
+		top = data.position.y;
+
+	res.send(200);
+
+
 };
