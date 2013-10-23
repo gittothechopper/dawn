@@ -9,13 +9,13 @@ module.exports = function (grunt) {
 
     grunt.registerTask('create', function() {
 
-        var assetsDirectory = 'app/assets/',
-            pagesDirectory = 'app/templates/pages/',
-            cssDirectory = 'app/assets/styles/',
-            imagesDirectory = 'app/assets/img/',
-            javascriptDirectory = 'app/assets/scripts/',
+        var assetsDirectory = 'src/assets/',
+            pagesDirectory = 'src/templates/pages/',
+            cssDirectory = 'src/assets/styl/',
+            imagesDirectory = 'src/assets/img/',
+            javascriptDirectory = 'src/assets/js/scripts/',
             modulePattern = 'var '+name+' = (function () {\n\tfunction init () {\n\t}\n\treturn {\n\t\tinit: init\n\t}\n}());\n\n$(function () {\n\t'+name+'.init();\n});',
-            templateContent = '---\ntitle: '+name+'\ncssname: ' + name + '\njsname: ' + name + '\n---';
+            templateContent = '---\ntitle: '+name+'\n---';
 
         // // Cursory check that the file doesn't exist
         // if (grunt.file.exists(pagesDirectory+name+'.hbs')) {
@@ -26,7 +26,7 @@ module.exports = function (grunt) {
         grunt.file.mkdir(imagesDirectory+name);
 
         // create css
-        grunt.file.write(cssDirectory+name+'.styl', '#'+name+' {\n\n}');
+        grunt.file.write(cssDirectory+name+'.styl', '.'+name+' \n\tposition relative');
 
         // create js module
         grunt.file.write(javascriptDirectory+name+'.js', modulePattern);
