@@ -17,10 +17,10 @@ module.exports = function (grunt) {
             modulePattern = 'var '+name+' = (function () {\n\tfunction init () {\n\t}\n\treturn {\n\t\tinit: init\n\t}\n}());\n\n$(function () {\n\t'+name+'.init();\n});',
             templateContent = '---\ntitle: '+name+'\ncssname: ' + name + '\njsname: ' + name + '\n---';
 
-        // Cursory check that the file doesn't exist
-        if (grunt.file.exists(pagesDirectory+name+'.hbs')) {
-            grunt.fail.warn('Sorry, that page already exists', 1);
-        }
+        // // Cursory check that the file doesn't exist
+        // if (grunt.file.exists(pagesDirectory+name+'.hbs')) {
+        //     grunt.fail.warn('Sorry, that page already exists', 1);
+        // }
 
         // Make img directory
         grunt.file.mkdir(imagesDirectory+name);
