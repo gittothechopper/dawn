@@ -16,8 +16,6 @@ exports.ref = function (req, res) {
 		path = dir+page+ext,
 		css = '\n.ref\n\tposition: absolute\n\tleft: '+positionX+'px\n\ttop:'+positionY+'px\n';
 
-	console.log(__dirname+path+page+ext);
-
 	// check if css page exists
 	fs.exists(path, function (exists) {
 		if (exists===false) {
