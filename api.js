@@ -1,5 +1,5 @@
 var express = require('express'), 
-	routes = require('./routes'),
+	routes = require('./api/routes'),
 	http = require('http'),
 	path = require('path'),
 	cors = require('cors'),

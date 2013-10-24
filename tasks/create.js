@@ -11,7 +11,7 @@ module.exports = function (grunt) {
 
         var assetsDirectory = 'src/assets/',
             pagesDirectory = 'src/templates/pages/',
-            cssDirectory = 'src/assets/styl/',
+            cssDirectory = 'src/assets/css/',
             imagesDirectory = 'src/assets/img/',
             javascriptDirectory = 'src/assets/js/scripts/',
             modulePattern = 'var '+name+' = (function () {\n\tfunction init () {\n\t}\n\treturn {\n\t\tinit: init\n\t}\n}());\n\n$(function () {\n\t'+name+'.init();\n});',

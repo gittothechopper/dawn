@@ -1,7 +1,7 @@
 module.exports = {
 	api: {
 		options: {
-			script: './api/app.js',
+			script: './api.js',
 			background: true,
 			port: 3001,
 			delay: 5
