@@ -10,6 +10,31 @@ exports.ref = function (req, res) {
 		positionX = data.position.x,
 		positionY = data.position.y;
 
-	res.send(200);
+	// options
+	var dir = './src/assets/css/'
+		ext = '.styl',
+		path = dir+page+ext,
+		css = '\n.ref\n\tposition: absolute\n\tleft: '+positionX+'px\n\ttop:'+positionY+'px\n';
 
+	console.log(__dirname+path+page+ext);
+
+	// check if css page exists
+	fs.exists(path, function (exists) {
+		if (exists===false) {
+			console.log('\n'+page+ext+" not found at "+path+'\n');
+		} else {
+			appendCSS();
+		}
+	});
+
+	// append css
+	function appendCSS() {
+		fs.appendFile(path, css, function (err) {
+			if (err) {
+				console.log('\n'+err+'\n')
+			} else {
+				send(200);
+			}
+		});
+	}
 };
