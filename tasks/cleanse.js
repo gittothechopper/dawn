@@ -1,6 +1,6 @@
 module.exports = function (grunt) {
 
-	var _ = require('underscore'),
+	var _ = grunt.util._,
 		assets = [],
 		links = [],
 		regex = new RegExp('(?:href|src|url)[\=\(][\'"](?!(?:http|#|\s|"))(.+?(?=jpg|png|mp4|pdf|js)?)[\'"]', 'ig');
