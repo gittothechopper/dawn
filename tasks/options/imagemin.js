@@ -1,6 +1,6 @@
 module.exports = {
 	options: {
-		optimizationLevel: 3,
+		optimizationLevel: 1,
 	},
 	files: {
 		expand: true,
