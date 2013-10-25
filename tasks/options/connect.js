@@ -2,8 +2,8 @@ module.exports = {
 	server: {
 		options: {
 			port: 3000,
-			base: 'app/',
-			directory: 'app/',
+			base: 'dist/',
+			directory: 'dist/',
 			hostname: 'localhost',
 			open: true,
 			livereload: true

@@ -3,6 +3,6 @@ module.exports = {
 		reset: true
 	},
 	all: {
-		src: ['./app/**/*.html']
+		src: ['./dist/**/*.html']
 	},
 }

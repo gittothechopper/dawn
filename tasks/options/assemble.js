@@ -3,7 +3,7 @@ module.exports = {
 		offline: '<%= offlineState %>',
 		production: '<%= production %>',
 		data: './src/**/*.{json,yml}',
-		assets: 'app/assets',
+		assets: 'dist/assets',
 		images: 'assets/img',
 		helpers: './src/helpers/helper-*.js',
 		layoutdir: './src/templates/layouts',
@@ -17,7 +17,7 @@ module.exports = {
 			expand: true,
 			cwd: 'src/templates/pages',
 			src: ['*.*'],
-			dest: 'app/'
+			dest: 'dist/'
 		},
 	]},
 }

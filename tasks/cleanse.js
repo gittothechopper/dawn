@@ -13,7 +13,7 @@ module.exports = function (grunt) {
 	function getAssetsArray () {
 		grunt.file.expand({
 			filter: 'isFile',
-			cwd: 'app'
+			cwd: 'dist'
 		}, ['assets/**/*']).forEach(function (file) {	
 			assets.push(file);
 		});
@@ -24,9 +24,9 @@ module.exports = function (grunt) {
 	function getLinkedAssets (assets) {
 		grunt.file.expand({
 			filter: 'isFile',
-			cwd: 'app'
+			cwd: 'dist'
 		}, ['**/*.html', '**/*.js', '**/*.css']).forEach(function (file) {	
-			var content = grunt.file.read('app/'+file);
+			var content = grunt.file.read('dist/'+file);
 			while ((result = regex.exec(content)) !== null) {
 				links.push(result[1]);
 			}
@@ -39,7 +39,7 @@ module.exports = function (grunt) {
 		var remove = _.difference(assets, links);
 		remove.forEach(function (el) {
 			console.log('Removed: '+el);
-			grunt.file.delete('app/'+el);
+			grunt.file.delete('dist/'+el);
 		});
 	}
 

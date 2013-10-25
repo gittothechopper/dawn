@@ -6,6 +6,6 @@ module.exports = {
 		expand: true,
 		cwd: 'src/',
 		src: '**/*.{png,jpg,gif}',
-		dest: 'app/'
+		dest: 'dist/'
 	}
 }

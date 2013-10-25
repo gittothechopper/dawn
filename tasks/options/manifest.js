@@ -1,7 +1,7 @@
 module.exports = {
 	generate: {
 		options: {
-			basePath: 'app/',
+			basePath: 'dist/',
 			network: ['http://*', 'https://*'],
 			preferOnline: true,
 			verbose: true,
@@ -10,6 +10,6 @@ module.exports = {
 			master: ['index.html']
 		},
 		src: ['*.*', '**/*.*'],
-		dest: 'app/manifest.appcache'
+		dest: 'dist/manifest.appcache'
 	}
 }

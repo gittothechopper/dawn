@@ -6,8 +6,8 @@ module.exports = {
    	},
 	files: {
 		expand: true,
-		cwd: 'app/',
+		cwd: 'dist/',
 		src: '**/*.html',
-		dest: 'app/'
+		dest: 'dist/'
 	}
 }

@@ -1,9 +1,9 @@
 module.exports = {
 	minify: {
 		expand: true,
-		cwd: 'app/assets/css',
+		cwd: 'dist/assets/css',
 		src: ['*.css', '!*.min.css'],
-		dest: 'app/assets/css',
+		dest: 'dist/assets/css',
 		ext: '.css'
 	}
 }

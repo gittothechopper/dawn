@@ -4,7 +4,7 @@ module.exports = {
 			expand: true,
 			cwd: 'src/assets',
 			src: ['img/**', 'fonts/**'],
-			dest: 'app/assets',
+			dest: 'dist/assets',
 		},
 	]},
 	jsVendor: {
@@ -12,7 +12,7 @@ module.exports = {
 			expand: true,
 			cwd: 'src/assets/js/vendor',
 			src: '**',
-			dest: 'app/assets/js/vendor',
+			dest: 'dist/assets/js/vendor',
 		},
 	]},
 	jsScripts: {
@@ -20,7 +20,7 @@ module.exports = {
 			expand: true,
 			cwd: 'src/assets/js/scripts',
 			src: '**',
-			dest: 'app/assets/js/scripts',
+			dest: 'dist/assets/js/scripts',
 		},
 	]},
 }

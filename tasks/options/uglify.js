@@ -1,7 +1,7 @@
 module.exports = {
 	jsVendor: {		
 		files: {
-			'app/assets/js/lib.min.js': 'app/assets/js/lib.js'
+			'dist/assets/js/lib.min.js': 'dist/assets/js/lib.js'
 		}
 	},
 }
