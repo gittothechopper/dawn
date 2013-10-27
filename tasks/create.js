@@ -7,6 +7,8 @@ module.exports = function (grunt) {
 
     var name = grunt.option('name') || null;
 
+    var fs = require('fs');
+
     grunt.registerTask('create', function() {
 
         var assetsDirectory = 'src/assets/',
@@ -15,12 +17,12 @@ module.exports = function (grunt) {
             imagesDirectory = 'src/assets/img/',
             javascriptDirectory = 'src/assets/js/scripts/',
             modulePattern = 'var '+name+' = (function () {\n\tfunction init () {\n\t}\n\treturn {\n\t\tinit: init\n\t}\n}());\n\n$(function () {\n\t'+name+'.init();\n});',
-            templateContent = '---\ntitle: '+name+'\n---';
+            templateContent = '---\ntitle: '+name+'\n---',
+            importCSS = '\n@import "'+name+'.styl"';
 
-        // // Cursory check that the file doesn't exist
-        // if (grunt.file.exists(pagesDirectory+name+'.hbs')) {
-        //     grunt.fail.warn('Sorry, that page already exists', 1);
-        // }
+        if (grunt.file.exists(pagesDirectory+name+'.hbs')) {
+            grunt.fail.warn('A file already exists with that name, please use a different one.', 1);
+        }
 
         // Make img directory
         grunt.file.mkdir(imagesDirectory+name);
@@ -33,6 +35,9 @@ module.exports = function (grunt) {
 
         // create page template
         grunt.file.write(pagesDirectory+name+'.hbs', templateContent);
+
+        // append stylesheet to main styles
+        fs.appendFileSync(cssDirectory+'screen.styl', importCSS);
 
     });
 };
