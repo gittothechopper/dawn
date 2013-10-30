@@ -14,6 +14,7 @@ var app = (function () {
 			controlNav: false,
 			directionNav: false,
 			animationLoop: false,
+			direction: "vertical",
 			start: function (slider) {
 				_slider(slider);
 			},
